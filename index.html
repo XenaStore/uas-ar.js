@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UAS A-Frame + AR.js </title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs>
+    <!-- Asset -->
+    <a-assets>
+  <a-asset-item id="shiba" src="model/shiba.glb"></a-asset-item>
+  <a-asset-item id="shiba2" src="model/shiba2.glb"></a-asset-item>
+  <a-asset-item id="shiba3" src="model/shiba3.glb"></a-asset-item>
+  <a-asset-item id="shiba4" src="model/shiba4.glb"></a-asset-item>
+  <audio id="shibaSound" src="model/shiba.mp3"></audio>
+</a-assets>
+
+
+    <!-- Marker -->
+    <a-marker preset="hiro" id="marker">
+      <a-entity id="shiba0-wrapper" scale="0.1 0.1 0.1">
+        <a-entity gltf-model="#shiba"></a-entity>
+      </a-entity>
+      <a-entity id="shiba2-wrapper" scale="0.1 0.1 0.1">
+        <a-entity gltf-model="#shiba2"></a-entity>
+      </a-entity>
+      <a-entity id="shiba3-wrapper" scale="0.1 0.1 0.1">
+        <a-entity gltf-model="#shiba3"></a-entity>
+      </a-entity>
+      <a-entity id="shiba4-wrapper" scale="0.1 0.1 0.1">
+        <a-entity gltf-model="#shiba4"></a-entity>
+      </a-entity>
+
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+
+  <!-- Tombol kontrol rotasi -->
+  <button id="toggleBtn">Stop Rotasi</button>
+  <script src="js/script.js"></script>
+</body>
+</html>
